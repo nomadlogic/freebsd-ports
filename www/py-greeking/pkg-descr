@@ -1,0 +1,12 @@
+Greeking
+
+Django template tools for printing filler, a technique from the days of hot type known as greeking
+
+Greeking Can:
+- Generate filler images from placehold.it, placekitten.com and Fill Murray.
+- Print pangrams in a variety of languages. A pangram is a phrase that includes every letter of an alphabet.
+- Create Story, Image, RelatedItem and Quote objects with boilerplate text, URLs and a set of the attributes common to news.
+- Print snippets from Lewis Carroll's poem Jabberwocky.
+- Import an list of filler comments for use in greeking Django's 'contrib' comments app.
+
+http://django-greeking.readthedocs.io/en/latest/
