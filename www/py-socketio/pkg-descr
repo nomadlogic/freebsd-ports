@@ -1,0 +1,24 @@
+Python implementation of the Socket.IO realtime server.
+
+Features:
+- Compatible with Python 2.7 and Python 3.3+.
+- Supports large number of clients even on modest hardware when used with
+  an asynchronous server based on eventlet or gevent. For development and
+  testing, any WSGI complaint multi-threaded server can be used.
+- Includes a WSGI middleware that integrates Socket.IO traffic with 
+  standard WSGI applications.
+- Broadcasting of messages to all connected clients, or to subsets of 
+  them assigned to “rooms”.
+- Optional support for multiple servers, connected through a messaging
+  queue such as Redis or RabbitMQ.
+- Send messages to clients from external processes, such as Celery
+  workers or auxiliary scripts.
+- Event-based architecture implemented with decorators that hides the
+  details of the protocol.
+- Support for HTTP long-polling and WebSocket transports.
+- Support for XHR2 and XHR browsers.
+- Support for text and binary messages.
+- Support for gzip and deflate HTTP compression.
+- Configurable CORS responses, to avoid cross-origin problems with browsers.
+
+http://github.com/miguelgrinberg/python-socketio/

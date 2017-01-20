@@ -1,0 +1,4 @@
+The Flask-Inputs extension adds support for WTForms to validate request data from args
+to headers to json.
+
+WWW: https://pythonhosted.org/Flask-Inputs/
