@@ -1,0 +1,16 @@
+TinyS3
+
+A small library for uploading files to S3, with support of async uploads, 
+worker pools, cache headers etc.
+
+Features:
+- Get files from S3
+- Upload files to S3
+- Copy keys inside/between buckets
+- Delete keys
+- Update key metadata
+- List keys in a bucket
+- Simple way to set key as public or setting Cache-Control and Content-Type headers.
+- Pool implementation for fast multi-threaded actions
+
+https://github.com/smore-inc/tinys3
