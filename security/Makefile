@@ -406,6 +406,7 @@
     SUBDIR += openca-tools-forked
     SUBDIR += opencdk
     SUBDIR += openconnect
+    SUBDIR += openconnect-gui
     SUBDIR += opencryptoki
     SUBDIR += openct
     SUBDIR += openiked
@@ -761,6 +762,7 @@
     SUBDIR += pecl-crack
     SUBDIR += pecl-crypto
     SUBDIR += pecl-gnupg
+    SUBDIR += pecl-krb5
     SUBDIR += pecl-libsodium
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt
