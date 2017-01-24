@@ -1,5 +1,5 @@
---- src/sna/kgem.c.orig	2014-12-09 17:08:21.000000000 +0100
-+++ src/sna/kgem.c	2015-11-19 00:06:27.883010000 +0100
+--- src/sna/sna_threads.c.orig	2016-11-18 16:32:46 UTC
++++ src/sna/sna_threads.c
 @@ -29,6 +29,9 @@
  #include "config.h"
  #endif
@@ -8,5 +8,5 @@
 +#include <stdio.h>	/* for getline() */
 +
  #include "sna.h"
- #include "sna_reg.h"
 
+ #include <unistd.h>
