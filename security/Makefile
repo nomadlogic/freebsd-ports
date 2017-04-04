@@ -3,6 +3,7 @@
 
     COMMENT = Security tools
 
+    SUBDIR += 0d1n
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += R-cran-ROAuth
@@ -36,6 +37,7 @@
     SUBDIR += bcrypt
     SUBDIR += bcwipe
     SUBDIR += bdc
+    SUBDIR += bdes
     SUBDIR += bearssl
     SUBDIR += beecrypt
     SUBDIR += belier
@@ -96,6 +98,7 @@
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += cvm
+    SUBDIR += cyberchef
     SUBDIR += cyrus-sasl2
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
@@ -124,6 +127,7 @@
     SUBDIR += elixir-comeonin
     SUBDIR += elixir-comeonin_i18n
     SUBDIR += elixir-jose
+    SUBDIR += enchive
     SUBDIR += erlang-fast_tls
     SUBDIR += erlang-jose
     SUBDIR += eschalot
@@ -162,6 +166,7 @@
     SUBDIR += gag
     SUBDIR += gcipher
     SUBDIR += gcr
+    SUBDIR += git-crypt
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
@@ -274,12 +279,14 @@
     SUBDIR += keepassx
     SUBDIR += keepassx-devel
     SUBDIR += keepassx2
+    SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kf5-kdesu
     SUBDIR += kgpg-kde4
+    SUBDIR += kickpass
     SUBDIR += knock
     SUBDIR += knocker
     SUBDIR += kpcli
@@ -345,7 +352,6 @@
     SUBDIR += linux-c6-libtasn1
     SUBDIR += linux-c6-nss
     SUBDIR += linux-c6-openssl
-    SUBDIR += linux-c6-openssl-compat
     SUBDIR += linux-c7-cyrus-sasl2
     SUBDIR += linux-c7-gnutls
     SUBDIR += linux-c7-libgcrypt
@@ -354,11 +360,11 @@
     SUBDIR += linux-c7-libtasn1
     SUBDIR += linux-c7-nss
     SUBDIR += linux-c7-openssl
-    SUBDIR += linux-c7-openssl-compat
     SUBDIR += lockdown
     SUBDIR += log2timeline
     SUBDIR += logcheck
     SUBDIR += luasec
+    SUBDIR += luasec-51
     SUBDIR += lynis
     SUBDIR += mac-robber
     SUBDIR += maia
@@ -379,6 +385,7 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += monkeysphere
+    SUBDIR += morphis
     SUBDIR += munge
     SUBDIR += mussh
     SUBDIR += nacl
@@ -782,6 +789,10 @@
     SUBDIR += php70-hash
     SUBDIR += php70-mcrypt
     SUBDIR += php70-openssl
+    SUBDIR += php71-filter
+    SUBDIR += php71-hash
+    SUBDIR += php71-mcrypt
+    SUBDIR += php71-openssl
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
@@ -872,6 +883,7 @@
     SUBDIR += py-mixbox
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
+    SUBDIR += py-onetime
     SUBDIR += py-openssl
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
@@ -886,6 +898,7 @@
     SUBDIR += py-plone.session
     SUBDIR += py-potr
     SUBDIR += py-pow
+    SUBDIR += py-pyaes
     SUBDIR += py-pyaff4
     SUBDIR += py-pyclamd
     SUBDIR += py-pycrypto
@@ -926,11 +939,13 @@
     SUBDIR += py-tuf
     SUBDIR += py-twistedConch
     SUBDIR += py-twofish
+    SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
     SUBDIR += py-vulndb
     SUBDIR += py-xmlsec
     SUBDIR += py-yara
     SUBDIR += py-yara-editor
+    SUBDIR += py-yubioath-desktop
     SUBDIR += py-zope.app.authentication
     SUBDIR += py-zope.app.localpermission
     SUBDIR += py-zope.app.principalannotation
@@ -983,9 +998,6 @@
     SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += ruby-camellia
-    SUBDIR += ruby-hmac
-    SUBDIR += ruby-password
-    SUBDIR += ruby-tcpwrap
     SUBDIR += rubygem-airbrussh
     SUBDIR += rubygem-attr_encrypted
     SUBDIR += rubygem-bcrypt
@@ -995,6 +1007,7 @@
     SUBDIR += rubygem-doorkeeper
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
+    SUBDIR += rubygem-googleauth
     SUBDIR += rubygem-gpgr
     SUBDIR += rubygem-gssapi
     SUBDIR += rubygem-jugyo-twitter_oauth
@@ -1009,14 +1022,17 @@
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
+    SUBDIR += rubygem-net-ssh-gateway1
     SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-net-telnet
+    SUBDIR += rubygem-nexpose
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-omniauth
     SUBDIR += rubygem-omniauth-bitbucket
     SUBDIR += rubygem-omniauth-cas3
     SUBDIR += rubygem-omniauth-gitlab
     SUBDIR += rubygem-omniauth-multipassword
+    SUBDIR += rubygem-omniauth-oauth2-generic
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-openssl-ccm
@@ -1049,6 +1065,7 @@
     SUBDIR += rubygem-ruby-rc4
     SUBDIR += rubygem-ruby-saml
     SUBDIR += rubygem-scrypt
+    SUBDIR += rubygem-signet
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
@@ -1057,6 +1074,9 @@
     SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
+    SUBDIR += samhain
+    SUBDIR += samhain-client
+    SUBDIR += samhain-server
     SUBDIR += sancp
     SUBDIR += sasp
     SUBDIR += scamp
@@ -1071,6 +1091,7 @@
     SUBDIR += secure_delete
     SUBDIR += sguil
     SUBDIR += sha
+    SUBDIR += sha1collisiondetection
     SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi
@@ -1106,6 +1127,7 @@
     SUBDIR += srm
     SUBDIR += ssdeep
     SUBDIR += ssh-multiadd
+    SUBDIR += ssh-vault
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
     SUBDIR += sshguard

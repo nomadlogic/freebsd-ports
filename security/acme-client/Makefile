@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acme-client
-PORTVERSION=	0.1.15
+PORTVERSION=	0.1.16
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
@@ -12,6 +12,8 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Native C client for Let's Encrypt, designed for security
 
 LICENSE=	ISCL
+
+RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		gmake tar:tgz ssl
 

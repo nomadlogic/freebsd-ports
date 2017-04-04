@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.18.1
+PORTVERSION=	1.21.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -51,8 +52,8 @@ ASIO_CONFIGURE_OFF=	--with-boost=no
 ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
 ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 EXAMPLES_CONFIGURE_ENABLE=	examples
-EXAMPLES_BUILD_DEPENDS=	libevent2>=2.0.8:devel/libevent2
-EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent2
+EXAMPLES_BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
+EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
 HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson

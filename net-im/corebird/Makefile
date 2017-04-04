@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	corebird
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	cpm@FreeBSD.org
@@ -32,7 +33,9 @@ OPTIONS_DEFINE=		GSTREAMER NLS
 OPTIONS_DEFAULT=	GSTREAMER
 OPTIONS_SUB=		yes
 
-GSTREAMER_USE=			gstreamer1=yes,bad,good,gtksink,hls,libav,x,ximagesrc
+GSTREAMER_LIB_DEPENDS=		libgstbase-1.0.so:multimedia/gstreamer1 \
+				libgstreamer-1.0.so:multimedia/gstreamer1
+GSTREAMER_USE=			gstreamer1=yes,bad,good,gtksink,hls,libav,soup,x,ximagesrc
 GSTREAMER_CONFIGURE_OFF=	--disable-video
 
 NLS_USES=			gettext

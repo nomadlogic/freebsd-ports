@@ -31,6 +31,7 @@
     SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
+    SUBDIR += direwolf
     SUBDIR += dump1090
     SUBDIR += ebook2cw
     SUBDIR += ebook2cwgui
@@ -101,6 +102,7 @@
     SUBDIR += minicom
     SUBDIR += mlan3
     SUBDIR += morse
+    SUBDIR += multimon-ng
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c
@@ -154,6 +156,7 @@
     SUBDIR += rtl-sdr
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
+    SUBDIR += rubygem-serialport
     SUBDIR += rxtx
     SUBDIR += scmxx
     SUBDIR += sdr-wspr

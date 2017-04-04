@@ -65,16 +65,11 @@
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += jaxen
-    SUBDIR += jboss7
-    SUBDIR += jboss71
-    SUBDIR += jboss72
     SUBDIR += jcalendar
     SUBDIR += jcckit
     SUBDIR += jcommon
     SUBDIR += jd-gui
     SUBDIR += jdbcpool
-    SUBDIR += jdk16-doc
-    SUBDIR += jdk7-doc
     SUBDIR += jdk8-doc
     SUBDIR += jdom
     SUBDIR += jflex
@@ -95,6 +90,7 @@
     SUBDIR += junit
     SUBDIR += jxgrabkey
     SUBDIR += langspec
+    SUBDIR += lightweight-java-profiler
     SUBDIR += linux-oracle-jdk18
     SUBDIR += linux-oracle-jre18
     SUBDIR += mmake

@@ -17,6 +17,8 @@ COMMENT=	Debugging Information Manipulation Tools
 LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
+BROKEN=		does not build (/usr/local/include/libelf.h:308:8: error: unknown type name 'Elf32_Chdr')
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils
 PATCH_DEPENDS=	gnulib>=0:devel/gnulib
@@ -37,4 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|_GL_ATTRIBUTE_PURE|__attribute__((__pure__))|g' \
 	    ${WRKSRC}/obstack.h ${WRKSRC}/obstack.c
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1200000
+IGNORE=		requires FreeBSD 12.0 (ElfNN_Chdr)
+.endif
+
+.include <bsd.port.post.mk>

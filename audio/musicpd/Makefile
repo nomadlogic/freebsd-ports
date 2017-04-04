@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.20.2
-PORTREVISION=	1
+PORTVERSION=	0.20.6
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		gmake pkgconfig compiler:c++14-lang tar:xz
+USES=		compiler:c++14-lang gmake pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
@@ -67,7 +67,7 @@ VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
 YAJL_DESC=	SoundCloud support via libyajl
 
-OPTIONS_DEFAULT=ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
+OPTIONS_DEFAULT=HTTPD ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE CURL
 
 AAC_CONFIGURE_ENABLE=aac
 AAC_LIB_DEPENDS=libfaad.so:audio/faad
@@ -122,7 +122,7 @@ SAMPLERATE_LIB_DEPENDS=libsamplerate.so:audio/libsamplerate
 SIDPLAY2_CONFIGURE_ENABLE=sidplay
 SIDPLAY2_LIB_DEPENDS=libsidplay2.so:audio/libsidplay2
 SMB_CONFIGURE_enable=smbclient
-SMB_LIB_DEPENDS=libsmbclient.so:net/samba-libsmbclient
+SMB_USES=	samba:lib
 SNDFILE_CONFIGURE_ENABLE=sndfile
 SNDFILE_LIB_DEPENDS=libsndfile.so:audio/libsndfile
 SNDIO_CONFIGURE_ENABLE=sndio
@@ -155,10 +155,6 @@ USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1100000
-USE_GCC=	5+
-.endif
 
 .ifdef MPDCONF
 IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
@@ -213,8 +209,8 @@ CONFIGURE_ARGS+=--disable-shout
 .endif
 
 post-patch:
-# Replace ~/ with /var/mpd and make musicpd run as mpd by default
-	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd,g' \
+# Replace ~/ with /var/mpd/ and make musicpd run as mpd by default
+	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd/,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
 # Uncomment OSS audio output part from MPDCONF; dragons!

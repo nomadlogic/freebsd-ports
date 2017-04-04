@@ -3,6 +3,8 @@
 
 PORTNAME=	toxcore
 PORTVERSION=	0.1.5
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p
 
@@ -11,7 +13,7 @@ COMMENT=	ProjectTox-Core library, a decentralized and secure messenger
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	checkmk:devel/libcheck
+BUILD_DEPENDS=	checkmk:devel/check
 LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libsndfile.so:audio/libsndfile		\
 		libsodium.so:security/libsodium		\
@@ -23,7 +25,6 @@ TEST_DEPENDS=	${LOCALBASE}/lib/libmsgpackc.so:devel/msgpack	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	c-toxcore
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=		cmake compiler:c11 libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

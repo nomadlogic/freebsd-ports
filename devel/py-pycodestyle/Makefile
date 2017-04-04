@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycodestyle
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ COMMENT=	Python style guide checker
 LICENSE=	MIT # mentioned as "Expat"
 
 USES?=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
