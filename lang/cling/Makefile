@@ -3,12 +3,12 @@
 
 PORTNAME=		cling
 PORTVERSION=		0.4
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_2016-12-29_sources
 
-MAINTAINER=		mokhi64@gmail.com
+MAINTAINER=		mmokhi@FreeBSD.org
 COMMENT=		Interactive C++ Interpreter Based on LLVM and Clang Libs
 
 LICENSE=		LLVM NCSA

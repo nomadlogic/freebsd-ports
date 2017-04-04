@@ -45,6 +45,14 @@ shebangonefile() {
 	case "${interp}" in
 	"") ;;
 	${LINUXBASE}/*) ;;
+	${LOCALBASE}/bin/perl5.* | ${PREFIX}/bin/perl5.*)
+		# lang/perl5* are allowed to have these shebangs.
+		if ! expr ${PKGORIGIN} : '^lang/perl5.*' > /dev/null; then
+			err "'${interp}' is an invalid shebang for '${f#${STAGEDIR}${PREFIX}/}' you must use ${LOCALBASE}/bin/perl."
+			err "Either pass \${PERL} to the build or use USES=shebangfix"
+			rc=1
+		fi
+		;;
 	${LOCALBASE}/*) ;;
 	${PREFIX}/*) ;;
 	/bin/csh) ;;
@@ -374,7 +382,6 @@ proxydeps_suggest_uses() {
 		${pkg} = "graphics/cairomm" -o \
 		${pkg} = "devel/dconf" -o \
 		${pkg} = "audio/esound" -o \
-		${pkg} = "x11-toolkits/gal2" -o \
 		${pkg} = "devel/gconf2" -o \
 		${pkg} = "devel/gconfmm26" -o \
 		${pkg} = "devel/glib12" -o \
@@ -395,10 +402,8 @@ proxydeps_suggest_uses() {
 		${pkg} = "x11-toolkits/gtksourceviewmm3" -o \
 		${pkg} = "devel/libbonobo" -o \
 		${pkg} = "x11-toolkits/libbonoboui" -o \
-		${pkg} = "databases/libgda4" -o \
 		${pkg} = "databases/libgda5" -o \
 		${pkg} = "databases/libgda5-ui" -o \
-		${pkg} = "databases/libgdamm" -o \
 		${pkg} = "databases/libgdamm5" -o \
 		${pkg} = "devel/libglade2" -o \
 		${pkg} = "x11/libgnome" -o \
@@ -427,12 +432,10 @@ proxydeps_suggest_uses() {
 		warn "you need USE_GNOME+=${pkg#*/}"
 	# Gnome different as port
 	# grep LIB_DEPENDS= Mk/Uses/gnome.mk |sed -e 's|\(.*\)_LIB_DEPENDS.*:\(.*\)\/\(.*\)|[ "\1" = "\3" ] \|\| echo "elif [ \\${pkg} = \\\"\2/\3\\\" ]; then; warn \\\"you need USE_GNOME+=\1\\\""|'|sort|sh
-	elif [ ${pkg} = "accessibility/at-spi" ]; then warn "you need USE_GNOME+=atspi"
 	elif [ ${pkg} = "databases/evolution-data-server" ]; then warn "you need USE_GNOME+=evolutiondataserver3"
 	elif [ ${pkg} = "graphics/gdk-pixbuf" ]; then warn "you need USE_GNOME+=gdkpixbuf"
 	elif [ ${pkg} = "graphics/gdk-pixbuf2" ]; then warn "you need USE_GNOME+=gdkpixbuf2"
 	elif [ ${pkg} = "x11/gnome-desktop" ]; then warn "you need USE_GNOME+=gnomedesktop3"
-	elif [ ${pkg} = "accessibility/gnome-speech" ]; then warn "you need USE_GNOME+=gnomespeech"
 	elif [ ${pkg} = "devel/gnome-vfs" ]; then warn "you need USE_GNOME+=gnomevfs2"
 	elif [ ${pkg} = "devel/gobject-introspection" ]; then warn "you need USE_GNOME+=introspection"
 	elif [ ${pkg} = "graphics/libart_lgpl" ]; then warn "you need USE_GNOME+=libartlgpl2"
@@ -636,22 +639,6 @@ proxydeps_suggest_uses() {
 	fi
 }
 
-subst_dep_file() {
-	local dep_file=$1
-	if expr ${dep_file} : "${LOCALBASE}/lib/libGL.so.[0-9]$" > /dev/null; then
-		if [ -f ${LOCALBASE}/lib/.mesa/libGL.so ]; then
-			echo ${LOCALBASE}/lib/.mesa/libGL.so
-			return
-		fi
-	elif expr ${dep_file} : "${LOCALBASE}/lib/libEGL.so.[0-9]$" > /dev/null; then
-		if [ -f ${LOCALBASE}/lib/.mesa/libEGL.so ]; then
-			echo ${LOCALBASE}/lib/.mesa/libEGL.so
-			return
-		fi
-	fi
-	echo ${dep_file}
-}
-
 proxydeps() {
 	local file dep_file dep_file_pkg already rc
 
@@ -665,7 +652,6 @@ proxydeps() {
 		while read dep_file; do
 			# No results presents a blank line from heredoc.
 			[ -z "${dep_file}" ] && continue
-			dep_file=$(subst_dep_file ${dep_file})
 			# Skip files we already checked.
 			if listcontains ${dep_file} "${already}"; then
 				continue

@@ -33,6 +33,7 @@
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += cegobridge
+    SUBDIR += clickhouse
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
@@ -120,10 +121,7 @@
     SUBDIR += jakarta-commons-dbutils
     SUBDIR += jasperreports
     SUBDIR += jdb
-    SUBDIR += jdbc-oracle10g
     SUBDIR += jdbc-oracle11g
-    SUBDIR += jdbc-oracle8i
-    SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
     SUBDIR += jlog
     SUBDIR += jrobin
@@ -141,14 +139,6 @@
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
     SUBDIR += libdrizzle-redux
-    SUBDIR += libgda4
-    SUBDIR += libgda4-bdb
-    SUBDIR += libgda4-jdbc
-    SUBDIR += libgda4-ldap
-    SUBDIR += libgda4-mdb
-    SUBDIR += libgda4-mysql
-    SUBDIR += libgda4-postgresql
-    SUBDIR += libgda4-reference
     SUBDIR += libgda5
     SUBDIR += libgda5-bdb
     SUBDIR += libgda5-jdbc
@@ -157,7 +147,6 @@
     SUBDIR += libgda5-mysql
     SUBDIR += libgda5-postgresql
     SUBDIR += libgda5-ui
-    SUBDIR += libgdamm
     SUBDIR += libgdamm5
     SUBDIR += libhsclient
     SUBDIR += libiodbc
@@ -178,6 +167,7 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += liquibase
     SUBDIR += lmdb
+    SUBDIR += lua-xapian
     SUBDIR += luadbi
     SUBDIR += luasql-firebird
     SUBDIR += luasql-mysql
@@ -226,6 +216,7 @@
     SUBDIR += mysql57-server
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
+    SUBDIR += mysqlwsrep56-server
     SUBDIR += mysqlbackup
     SUBDIR += mysqlbigram
     SUBDIR += mysqldump-secure
@@ -249,8 +240,6 @@
     SUBDIR += openark-kit
     SUBDIR += opendbx
     SUBDIR += opentsdb
-    SUBDIR += oracle7-client
-    SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
     SUBDIR += p5-Amon2-DBI
     SUBDIR += p5-AnyEvent-BDB
@@ -313,7 +302,6 @@
     SUBDIR += p5-DBD-Mock
     SUBDIR += p5-DBD-Multi
     SUBDIR += p5-DBD-ODBC
-    SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-PgLite
     SUBDIR += p5-DBD-PgPP
@@ -386,6 +374,7 @@
     SUBDIR += p5-DBIx-Handler
     SUBDIR += p5-DBIx-Inspector
     SUBDIR += p5-DBIx-Introspector
+    SUBDIR += p5-DBIx-Lite
     SUBDIR += p5-DBIx-Log4perl
     SUBDIR += p5-DBIx-MySQLSequence
     SUBDIR += p5-DBIx-NoSQL
@@ -428,6 +417,7 @@
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
     SUBDIR += p5-Exception-Class-DBI
+    SUBDIR += p5-File-Locate
     SUBDIR += p5-GDBM
     SUBDIR += p5-Genezzo
     SUBDIR += p5-GitDDL
@@ -486,8 +476,9 @@
     SUBDIR += p5-SQLite-Work
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
-    SUBDIR += p5-Search-Xapian
     SUBDIR += p5-Search-Xapian10
+    SUBDIR += p5-Search-Xapian12
+    SUBDIR += p5-Store-CouchDB
     SUBDIR += p5-T2
     SUBDIR += p5-Tangram
     SUBDIR += p5-Template-DBI
@@ -504,6 +495,7 @@
     SUBDIR += p5-Tie-LevelDB
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
+    SUBDIR += p5-Xapian
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-tokyotyrant
     SUBDIR += pear-DB
@@ -542,14 +534,17 @@
     SUBDIR += pear-Structures_DataGrid_DataSource_PDO
     SUBDIR += pear-XML_Query2XML
     SUBDIR += pecl-chdb
+    SUBDIR += pecl-couchbase
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
     SUBDIR += pecl-leveldb
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
+    SUBDIR += pecl-memcached2
     SUBDIR += pecl-mongo
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-pdo_user
+    SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant
     SUBDIR += percona-pam-for-mysql
@@ -597,6 +592,7 @@
     SUBDIR += pguri
     SUBDIR += pgworksheet
     SUBDIR += php-mdcached
+    SUBDIR += php-xapian
     SUBDIR += php5-pdo_cassandra
     SUBDIR += php5-tarantool
     SUBDIR += php56-dba
@@ -613,7 +609,6 @@
     SUBDIR += php56-pdo_pgsql
     SUBDIR += php56-pdo_sqlite
     SUBDIR += php56-pgsql
-    SUBDIR += php56-redis
     SUBDIR += php56-sqlite3
     SUBDIR += php56-sybase_ct
     SUBDIR += php70-dba
@@ -630,8 +625,22 @@
     SUBDIR += php70-pdo_pgsql
     SUBDIR += php70-pdo_sqlite
     SUBDIR += php70-pgsql
-    SUBDIR += php70-redis
     SUBDIR += php70-sqlite3
+    SUBDIR += php71-dba
+    SUBDIR += php71-interbase
+    SUBDIR += php71-memcache
+    SUBDIR += php71-mysqli
+    SUBDIR += php71-odbc
+    SUBDIR += php71-pdo
+    SUBDIR += php71-pdo_dblib
+    SUBDIR += php71-pdo_firebird
+    SUBDIR += php71-pdo_mysql
+    SUBDIR += php71-pdo_odbc
+    SUBDIR += php71-pdo_pgsql
+    SUBDIR += php71-pdo_sqlite
+    SUBDIR += php71-pgsql
+    SUBDIR += php71-sqlite3
+    SUBDIR += phpliteadmin
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
@@ -783,8 +792,6 @@
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-migrate
-    SUBDIR += py-sqlalchemy08
-    SUBDIR += py-sqlalchemy09
     SUBDIR += py-sqlalchemy10
     SUBDIR += py-sqlalchemy11
     SUBDIR += py-sqlite3
@@ -799,6 +806,7 @@
     SUBDIR += py-umemcache
     SUBDIR += py-unqlite
     SUBDIR += py-whisper
+    SUBDIR += py-xapian
     SUBDIR += py3-bsddb3
     SUBDIR += py3-mysqlclient
     SUBDIR += py3-psycopg2
@@ -848,15 +856,12 @@
     SUBDIR += rrdtool
     SUBDIR += rrdtool12
     SUBDIR += ruby-bdb
-    SUBDIR += ruby-cdb
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-mysql
-    SUBDIR += ruby-o_dbm
     SUBDIR += ruby-odbc
     SUBDIR += ruby-qdbm
-    SUBDIR += ruby-rdbc1
-    SUBDIR += ruby-sybct
     SUBDIR += ruby-tokyocabinet
+    SUBDIR += ruby-xapian
     SUBDIR += rubygem-activemodel4
     SUBDIR += rubygem-activemodel5
     SUBDIR += rubygem-activerecord-import
@@ -869,9 +874,8 @@
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-arel-helpers
-    SUBDIR += rubygem-arel3
-    SUBDIR += rubygem-arel5
     SUBDIR += rubygem-arel6
+    SUBDIR += rubygem-arel7
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
@@ -952,6 +956,7 @@
     SUBDIR += sqlite3
     SUBDIR += sqlitebrowser
     SUBDIR += sqlitebrowser-qt5
+    SUBDIR += sqliteconvert
     SUBDIR += sqliteman
     SUBDIR += sqlitemanager
     SUBDIR += sqliteodbc
@@ -985,10 +990,11 @@
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
+    SUBDIR += xapian-bindings12
     SUBDIR += xapian-core
     SUBDIR += xapian-core10
+    SUBDIR += xapian-core12
     SUBDIR += xtrabackup
-    SUBDIR += yasql
     SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

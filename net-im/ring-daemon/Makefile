@@ -4,7 +4,7 @@
 PORTNAME=	ring-daemon
 PORTVERSION=	0.160516
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im net-p2p
 
 MAINTAINER=	yuri@rawbw.com
@@ -56,6 +56,8 @@ DBUS_LIB_DEPENDS=	\
 	libdbus-1.so:devel/dbus \
 	libdbus-c++-1.so:devel/dbus-c++
 OPTIONS_SUB=	yes
+
+BROKEN_aarch64=		Fails to configure: machine arm64-portbld not recognized
 
 .include <bsd.port.pre.mk>
 

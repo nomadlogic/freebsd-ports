@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libdrm
-PORTVERSION=	2.4.74
+PORTVERSION=	2.4.75
 PORTEPOCH=	1
+PORTREVISION=	3
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
@@ -12,10 +13,9 @@ COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	libdevq>=0.0.4:devel/libdevq
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
-		libdevq.so:devel/libdevq \
-		libpthread-stubs.so:devel/libpthread-stubs
+		libdevq.so:devel/libdevq
 
 USES=		libtool pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -27,8 +27,6 @@ OPTIONS_DEFINE=	MANPAGES
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	MANPAGES
 .endif
-
-USES+=		gmake
 
 .include <bsd.port.options.mk>
 
@@ -62,7 +60,7 @@ PLIST_SUB+=	ARM_DRIVERS="@comment "
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER=""
 PLIST_SUB+=	RADEON_DRIVERS=""
-.elif ${ARCH} == arm6 || ${ARCH} == aarch64
+.elif ${ARCH} == armv6 || ${ARCH} == aarch64
 PLIST_SUB+=	ARM_DRIVERS=""
 PLIST_SUB+=	INTEL_DRIVER="@comment "
 PLIST_SUB+=	NOUVEAU_DRIVER="@comment "

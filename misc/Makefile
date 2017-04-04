@@ -312,7 +312,6 @@
     SUBDIR += p5-File-Sort
     SUBDIR += p5-Geo-Cache
     SUBDIR += p5-Geo-Coder-Bing
-    SUBDIR += p5-Geo-Coder-Geocoder-US
     SUBDIR += p5-Geo-Coder-Google
     SUBDIR += p5-Geo-Coder-Googlev3
     SUBDIR += p5-Geo-Coder-Many
@@ -363,6 +362,7 @@
     SUBDIR += pfm
     SUBDIR += php56-calendar
     SUBDIR += php70-calendar
+    SUBDIR += php71-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
@@ -391,6 +391,7 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
+    SUBDIR += py3-tqdm
     SUBDIR += pylize
     SUBDIR += qbrew
     SUBDIR += qlas
@@ -403,6 +404,7 @@
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
+    SUBDIR += qtchooser
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
@@ -452,7 +454,6 @@
     SUBDIR += termatrix
     SUBDIR += terraform
     SUBDIR += teseq
-    SUBDIR += teslams
     SUBDIR += timediff
     SUBDIR += tkcron
     SUBDIR += tkinfo
