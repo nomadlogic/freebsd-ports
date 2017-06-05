@@ -18,8 +18,8 @@ LIB_DEPENDS=	libenchant.so:textproc/enchant
 
 USES=		python
 USE_PYTHON=	distutils
-USE_WX=		3.0+
-WX_COMPS=	python:run
+#USE_WX=		3.0+
+#WX_COMPS=	python:run
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
