@@ -38,6 +38,7 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += clickhouse-cpp
+    SUBDIR += clickhouse-devel
     SUBDIR += closql
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
@@ -96,6 +97,7 @@
     SUBDIR += heidisql
     SUBDIR += hiredis
     SUBDIR += hsqldb
+    SUBDIR += iceberg-rust
     SUBDIR += immudb
     SUBDIR += imposm3
     SUBDIR += influxdb
